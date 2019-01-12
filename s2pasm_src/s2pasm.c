@@ -1,3 +1,28 @@
+/*
+ *
+ * Copyright (c) 2018 - 2019 by Dave Hein
+ *
+ * MIT License
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ */
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -275,7 +300,8 @@ int IsHubVariable(char *ptr)
         "r0", "r1", "r2", "r3", "r4", "r5", "r6", "r7", "r8", "r9", "r10", "r11",
         "r12", "r13", "r14", "sp", "lr", "temp", "temp1", "temp2", "__has_cordic",
         "CNT", "INA", "INB", "OUTA", "OUTB", "DIRA", "DIRB",
-        "cnt", "ina", "inb", "outa", "outb", "dira", "dirb", 0};
+        "cnt", "ina", "inb", "outa", "outb", "dira", "dirb",
+        "ijmp1", "ijmp2", "ijmp3", "iret1", "iret2", "iret3",  0};
 
     if (*ptr == '#') return 0;
 
@@ -453,6 +479,7 @@ void CheckLocalName(void)
 
 void usage(void)
 {
+    printf("s2pasm - a utility to convert from P1 to P2 assembly - version 0.005, 2019-1-12\n");
     printf("usage: s2pasm [options] filename\n");
     printf("  options are\n");
     printf("  -d      - Debug mode\n");
