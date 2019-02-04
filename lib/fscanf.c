@@ -2,16 +2,18 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
-int sscanf(const char *str, const char *fmt, ...)
+int fscanf(FILE *fd, const char *fmt, ...)
 {
     char *ptr;
     int *iptr;
     char *ptr1;
     va_list va;
     int count = 0;
+    char inbuf[200];
 
+    fgets(inbuf, 200, fd);
     va_start(va, fmt);
-    ptr = (char *)str;
+    ptr = inbuf;
     while (*fmt)
     {
         if (*fmt == '%')
